@@ -26,7 +26,7 @@ class SurvivorsController < ApplicationController
 
   # PATCH/PUT /survivors/1
   def update
-    if @survivor.update(survivor_params)
+    if @survivor.update(survivor_update_params)
       render json: @survivor
     else
       render json: @survivor.errors, status: :unprocessable_entity
@@ -47,5 +47,9 @@ class SurvivorsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def survivor_params
       params.require(:survivor).permit(:name, :age, :gender, :last_latitude, :last_longitude)
+    end
+
+    def survivor_update_params
+      params.require(:survivor).permit(:age, :gender, :last_latitude, :last_longitude)
     end
 end
