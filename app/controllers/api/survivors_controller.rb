@@ -1,4 +1,4 @@
-class SurvivorsController < ApplicationController
+class Api::SurvivorsController < ApplicationController
   before_action :set_survivor, only: %i[ show update destroy ]
 
   # GET /survivors

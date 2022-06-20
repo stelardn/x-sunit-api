@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  resources :survivors
-
+  namespace :api, defaults: { format: :json } do
+    resources :survivors
+  end
 end
