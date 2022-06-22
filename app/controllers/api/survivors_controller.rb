@@ -4,7 +4,6 @@ class Api::SurvivorsController < ApplicationController
   # GET /survivors
   def index
     @survivors = Survivor.all.sorted_by_name
-    @abducted = Survivor.all.abduction_filter
 
     # render json: @abducted
     render json: @survivors
@@ -43,6 +42,11 @@ class Api::SurvivorsController < ApplicationController
   # generate report
   def report
     render json: @report
+  end
+
+  def abductions#index
+    @abducted = Survivor.all.abduction_filter
+    render json: @abducted
   end
 
 
