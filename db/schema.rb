@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_20_020922) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_21_015012) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_20_020922) do
     t.datetime "updated_at", null: false
     t.string "last_latitude"
     t.string "last_longitude"
+    t.integer "flags", limit: 2, default: 0
+    t.virtual "abduction", type: :boolean, as: "(flags >= 3)", stored: true
   end
 
 end

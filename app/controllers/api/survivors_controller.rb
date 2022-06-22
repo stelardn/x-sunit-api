@@ -3,8 +3,10 @@ class Api::SurvivorsController < ApplicationController
 
   # GET /survivors
   def index
-    @survivors = Survivor.all
+    @survivors = Survivor.all.sorted_by_name
+    @abducted = Survivor.all.abduction_filter
 
+    # render json: @abducted
     render json: @survivors
   end
 
@@ -38,6 +40,12 @@ class Api::SurvivorsController < ApplicationController
     @survivor.destroy
   end
 
+  # generate report
+  def report
+    render json: @report
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_survivor
@@ -46,10 +54,11 @@ class Api::SurvivorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def survivor_params
-      params.require(:survivor).permit(:name, :age, :gender, :last_latitude, :last_longitude, :abduction_flags)
+      params.require(:survivor).permit(:id, :name, :age, :gender, :last_latitude, :last_longitude, :created_at, :updated_at, :flags, :abduction)
     end
 
     def survivor_update_params
-      params.require(:survivor).permit(:age, :gender, :last_latitude, :last_longitude, :abduction_flags)
+      params.require(:survivor).permit(:age, :gender, :last_latitude, :last_longitude)
     end
+
 end
