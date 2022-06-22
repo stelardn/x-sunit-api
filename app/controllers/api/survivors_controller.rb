@@ -62,7 +62,7 @@ class Api::SurvivorsController < ApplicationController
     end
 
     def survivor_update_params
-      params.require(:survivor).permit(:age, :gender, :last_latitude, :last_longitude)
+      params.require(:survivor).permit(:age, :gender, :last_latitude, :last_longitude, :flags)
     end
 
 end
