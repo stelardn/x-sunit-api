@@ -14,7 +14,8 @@ class Api::AbductionsController < ApplicationController
 
     non_abduction_rate = non_abductions / Survivor.all.count * 100
 
-    render json: "Current abduction percentage: #{abduction_rate}%. \nNon-abduction percentage: #{non_abduction_rate}%."
+    render json: "Current abduction percentage: #{abduction_rate}%.
+    \n Non-abduction percentage: #{non_abduction_rate}%."
   end
 
 end
