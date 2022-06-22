@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a business case developed as a part of Gocase Brasil internship selection program.
 
-Things you may want to cover:
+It was developed using Ruby on Rails and its purpose is to simulate an API where humans during an allien apocalypse can update their location, report survivors and abductions. Based on this information, the program generates reports on percentage of survivors, percentage of abductions and a list of the names of the survivors.
 
-* Ruby version
+Problem description available on https://github.com/anachronicsofa/gocase-intern-challenge.
 
-* System dependencies
+* Ruby version 3.1.2p20
+* Rails version 7.0.3
+* Database: PostgreSQL
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Gem Faker was used to populate the database.
