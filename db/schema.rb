@@ -18,8 +18,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_21_015012) do
     t.string "name", null: false
     t.integer "age"
     t.string "gender"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "last_latitude"
     t.string "last_longitude"
     t.integer "flags", limit: 2, default: 0

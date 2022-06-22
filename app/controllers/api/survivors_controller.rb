@@ -7,7 +7,7 @@ class Api::SurvivorsController < ApplicationController
 
     render json: @survivors
   end
-  
+
   # POST /survivors
   def create
     @survivor = Survivor.new(survivor_params)
@@ -48,7 +48,7 @@ class Api::SurvivorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def survivor_params
-      params.require(:survivor).permit(:id, :name, :age, :gender, :last_latitude, :last_longitude, :created_at, :updated_at, :flags, :abduction)
+      params.require(:survivor).permit(:id, :name, :age, :gender, :last_latitude, :last_longitude, :flags, :abduction)
     end
 
     def survivor_update_params
